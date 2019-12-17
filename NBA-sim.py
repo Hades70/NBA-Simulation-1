@@ -10,7 +10,7 @@ import numpy as np
 import random
 import xlwings as xw
 
-book = xw.Book(r'nba-data.xlsx')
+book = xw.Book(r'nba-data.csv')
 sheet = book.sheets('Main')
 df = sheet.range('a1:ag31').options(pd.DataFrame).value
 df = df.drop(['Team'],axis=1)
