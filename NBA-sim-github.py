@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[56]:
-
-
 import pandas as pd
 from plotly.offline import iplot, init_notebook_mode
 from plotly.subplots import make_subplots
@@ -17,11 +14,6 @@ book = xw.Book(r'nba-data.xlsx')
 sheet = book.sheets('Main')
 df = sheet.range('a1:ag31').options(pd.DataFrame).value
 df = df.drop(['Team'],axis=1)
-df.head()
-
-
-# In[172]:
-
 
 dictDf = df.to_dict('series')
 
@@ -43,10 +35,6 @@ effFg = dictDf['eff_fg%']
 oppEffFg = dictDf['opp_eff_fg%']
 netEffFg = dictDf['net_eff_fg%']
 twoPct = dictDf['2_pt%']
-
-
-# In[58]:
-
 
 class Team():
     def __init__(self,x,y):
@@ -103,10 +91,6 @@ TOR = Team('Toronto','Raptors')
 UTA = Team('Utah','Jazz')
 WAS = Team('Washington','Wizards')
 Teams = [ATL,BOS,BKN,CHA,CHI,CLE,DAL,DEN,DET,GSW,HOU,IND,LAC,LAL,MEM,MIA,MIL,MIN,NOP,NYK,OKC,ORL,PHI,PHX,POR,SAC,SAN,TOR,UTA,WAS]
-
-
-# In[169]:
-
 
 def SIMULATION(x,y):
     x_pts = 0
@@ -301,9 +285,6 @@ def SIMULATION(x,y):
                           })
     data = [trace]
     iplot({'data':data})
-
-
-# In[176]:
 
 
 SIMULATION(PHI,MIA)
