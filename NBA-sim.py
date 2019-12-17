@@ -274,7 +274,7 @@ def SIMULATION(x,y):
     trace = go.Table(header={'values':['    ',x.mascot,y.mascot],
                             'fill_color':'lightgrey'
                             },
-                    cells={'values':[['<b>Final Score','<b>Possessions','<b>Turnovers','<b>Offensive Rebounds',
+                    cells={'values':[['<b>Final Score','<b>successful Possessions','<b>Turnovers','<b>Offensive Rebounds',
                                       '<b>Threes Attempted','<b>Threes Made','<b>Three Point Pct',
                                       '<b>Twos Attempted','<b>Twos Made','<b>Two Point Pct','<b>Total Shot Attempts',
                                      '<b>Total Shots Made','<b>Total Shooting Pct','<b>Pts Per Shot'],
