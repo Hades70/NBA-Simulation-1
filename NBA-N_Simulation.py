@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[6]:
-
 
 import pandas as pd
 from plotly.offline import iplot, init_notebook_mode
@@ -14,14 +12,11 @@ import random
 import xlwings as xw
 import re
 
-book = xw.Book(r'nbadata.xlsx')
+book = xw.Book(r'nbadata.csv')
 sheet = book.sheets('Main')
 df = sheet.range('a1:ag31').options(pd.DataFrame).value
 df = df.drop(['Team'],axis=1)
 df.head()
-
-
-# In[7]:
 
 
 dictDf = df.to_dict()
@@ -44,9 +39,6 @@ effFg = dictDf['eff_fg%']
 oppEffFg = dictDf['opp_eff_fg%']
 netEffFg = dictDf['net_eff_fg%']
 twoPct = dictDf['2_pt%']
-
-
-# In[8]:
 
 
 class Team():
@@ -105,9 +97,6 @@ UTA = Team('Utah','Jazz')
 WAS = Team('Washington','Wizards')
 Teams = [ATL,BOS,BKN,CHA,CHI,CLE,DAL,DEN,DET,GSW,HOU,IND,LAC,LAL,MEM,MIA,MIL,MIN,NOP,NYK,OKC,ORL,PHI,PHX,POR,SAC,
          SAN,TOR,UTA,WAS]
-
-
-# In[9]:
 
 
 def N_SIMULATION_MC(x,y,n,xBook):
@@ -547,63 +536,9 @@ def N_SIMULATION_MC(x,y,n,xBook):
     layout = {'title':'<b>Average Outcome'} 
     data = [trace]
     iplot({'data':data,'layout':layout})
-    
-    
-    
-
-
-# In[10]:
 
 
 N = 1000
 B = None
 N_SIMULATION_MC(LAL,MIL,N,B)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 
