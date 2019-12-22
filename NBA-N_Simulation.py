@@ -12,7 +12,7 @@ import random
 import xlwings as xw
 import re
 
-book = xw.Book(r'nbadata.csv')
+book = xw.Book('data.csv')
 sheet = book.sheets('Main')
 df = sheet.range('a1:ag31').options(pd.DataFrame).value
 df = df.drop(['Team'],axis=1)
