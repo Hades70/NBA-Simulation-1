@@ -16,7 +16,6 @@ book = xw.Book('data.csv')
 sheet = book.sheets('Main')
 df = sheet.range('a1:ag31').options(pd.DataFrame).value
 df = df.drop(['Team'],axis=1)
-df.head()
 
 
 dictDf = df.to_dict()
