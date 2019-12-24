@@ -354,9 +354,11 @@ def N_SIMULATION_MC(x,y,n,xBook):
     xBook = xw.Book()
     sht = xBook.sheets('Sheet1')
     zx = sht.range
-    sht.range('b1').value = X_name + '_Points'
-    sht.range('c1').value = Y_name + '_Points'
-    sht.range('d1').value = X_name + '_Succesful_Possessions'
+    
+    zx('a1').value = 'Game_ID'
+    zx('b1').value = X_name + '_Points'
+    zx('c1').value = Y_name + '_Points'
+    zx('d1').value = X_name + '_Succesful_Possessions'
     zx('e1').value = Y_name + '_Succesful_Possessions'
     zx('f1').value = X_name + '_Turnovers'
     zx('g1').value = Y_name + '_Turnovers'
@@ -383,6 +385,7 @@ def N_SIMULATION_MC(x,y,n,xBook):
     zx('ab1').value = X_name + '_Pts_Per_shot'
     zx('ac1').value = Y_name + '_Pts_Per_shot'
     
+    zx('a2').options(transpose=True).value = x_tick
     zx('b2').options(transpose=True).value = Final_score_x
     zx('c2').options(transpose=True).value = Final_score_y
     zx('d2').options(transpose=True).value = Successful_possesions_x
