@@ -382,8 +382,8 @@ def N_SIMULATION_MC(x,y,n,xBook):
     zx('y1').value = Y_name + '_Total_Shots_Made'
     zx('z1').value = X_name + '_Total_Shooting%'
     zx('aa1').value = Y_name + '_Total_Shooting%'
-    zx('ab1').value = X_name + '_Pts_Per_shot'
-    zx('ac1').value = Y_name + '_Pts_Per_shot'
+    zx('ab1').value = X_name + '_Pts_Per_Shot'
+    zx('ac1').value = Y_name + '_Pts_Per_Shot'
     
     zx('a2').options(transpose=True).value = x_tick
     zx('b2').options(transpose=True).value = Final_score_x
